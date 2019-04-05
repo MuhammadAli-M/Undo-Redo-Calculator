@@ -10,16 +10,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var secondOperandTextField: UITextField!
+    @IBOutlet weak var historyCollectionView: UICollectionView!
+    
+    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var redoButton: UIButton!
+    
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
+    @IBOutlet weak var multiplyButton: UIButton!
+    @IBOutlet weak var divisionButton: UIButton!
+    
+    @IBOutlet weak var equalButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func mathOperatorDidTapped(_ sender: UIButton) {
     }
-
+    
+    @IBAction func equalButtonDidTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func undoButtonDidTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func redoButtonDidTapped(_ sender: UIButton) {
+    }
+    
 
 }
 
