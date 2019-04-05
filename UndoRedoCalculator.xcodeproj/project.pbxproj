@@ -13,6 +13,7 @@
 		34853E112257EFE500D12723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34853E102257EFE500D12723 /* Assets.xcassets */; };
 		34853E142257EFE500D12723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34853E122257EFE500D12723 /* LaunchScreen.storyboard */; };
 		34853E1C2258029900D12723 /* MathOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E1B2258029900D12723 /* MathOperation.swift */; };
+		34853E1E2258051600D12723 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E1D2258051600D12723 /* Operation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		34853E132257EFE500D12723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34853E152257EFE500D12723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34853E1B2258029900D12723 /* MathOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathOperation.swift; sourceTree = "<group>"; };
+		34853E1D2258051600D12723 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				34853E092257EFE200D12723 /* AppDelegate.swift */,
 				34853E0B2257EFE200D12723 /* ViewController.swift */,
+				34853E1D2258051600D12723 /* Operation.swift */,
 				34853E1B2258029900D12723 /* MathOperation.swift */,
 				34853E0D2257EFE200D12723 /* Main.storyboard */,
 				34853E102257EFE500D12723 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				34853E0C2257EFE200D12723 /* ViewController.swift in Sources */,
 				34853E0A2257EFE200D12723 /* AppDelegate.swift in Sources */,
 				34853E1C2258029900D12723 /* MathOperation.swift in Sources */,
+				34853E1E2258051600D12723 /* Operation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
