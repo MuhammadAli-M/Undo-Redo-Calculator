@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextView()
+        updateEqualButtonState()
     }
     
     @IBAction func mathOperatorDidTapped(_ sender: UIButton) {
@@ -49,10 +50,33 @@ class ViewController: UIViewController {
         if let mathOp =  MathOperation.operationForString(stringOperator: sender.titleLabel?.text ?? ""){
             self.mathOperator = mathOp
         }
-        
+        deselectAllOperator(except: sender.titleLabel?.text)
+        updateEqualButtonState()
     }
     
+    private func deselectAllOperator(except buttonText: String? = ""){
+        
+        operatorButtons.forEach { (button) in
+            if button.titleLabel?.text != buttonText{
+                button.isSelected = false
+            }else{
+                button.isSelected = true
+            }
+        }
+    }
     
+    func updateEqualButtonState(){
+        let isAnyOpetatorButtonSelected = operatorButtons.contains { $0.isSelected == true}
+        if secondOperandTextField.text != "" && isAnyOpetatorButtonSelected{
+            equalButton.isEnabled = true
+        }else{
+            equalButton.isEnabled = false
+        }
+    }
+    
+    @IBAction func secondTextFieldEditingChanged(_ sender: Any) {
+        updateEqualButtonState()
+    }
     
     @IBAction func equalButtonDidTapped(_ sender: UIButton) {
         guard let numberString = secondOperandTextField.text,
@@ -64,6 +88,11 @@ class ViewController: UIViewController {
         calculator.doOperation(operation: &operation)
         appResult = calculator.result
         print("result:  \(appResult)")
+        
+        secondOperandTextField.text = ""
+        deselectAllOperator()
+        updateUndoRedoButtonStates()
+        equalButton.isEnabled = false
     }
     
     @IBAction func undoButtonDidTapped(_ sender: UIButton) {
@@ -72,6 +101,7 @@ class ViewController: UIViewController {
         appResult = calculator.result
         print("result:  \(appResult)")
         }
+        updateUndoRedoButtonStates()
     }
     
     @IBAction func redoButtonDidTapped(_ sender: UIButton) {
@@ -80,8 +110,12 @@ class ViewController: UIViewController {
         appResult = calculator.result
         print("result:  \(appResult)")
         }
+        updateUndoRedoButtonStates()
     }
     
-
+    func updateUndoRedoButtonStates(){
+        redoButton.isEnabled = calculator.canRedo()
+        undoButton.isEnabled = calculator.canUndo()
+    }
 }
 
