@@ -46,7 +46,7 @@ extension ClaculatorViewController: UICollectionViewDelegate,UICollectionViewDat
         operation.first = appResult.get()
         calculator.doOperation(operation: &operation)
         appResult.set(calculator.result)
-        print("result: \(appResult)")
+        print("result: \(appResult.get())")
         operationsHistoryList.remove(at: indexPath.row)
         collectionView.reloadData()
     }
