@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     var appResult = SafeFloat(0)
     
-    var mathOperator:MathOperation?
+    var mathOperator:MathOperator?
     var operatorButtons:[UIButton]{
         get{
             return [plusButton, minusButton, multiplyButton, divisionButton]
@@ -46,10 +46,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mathOperatorDidTapped(_ sender: UIButton) {
-        if let mathOp =  MathOperation.operationForString(stringOperator: sender.titleLabel?.text ?? ""){
+        if let mathOp =  MathOperator.from(stringOperator: sender.titleLabel?.text ?? ""){
             self.mathOperator = mathOp
         }
-        print("Operator \(mathOperator) did tapped")
+        print("Operator \(mathOperator?.description) did tapped")
         deselectAllOperator(except: sender.titleLabel?.text)
         updateEqualButtonState()
     }

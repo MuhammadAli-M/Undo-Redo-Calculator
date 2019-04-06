@@ -11,9 +11,9 @@ import Foundation
 struct Operation:CustomStringConvertible{
     var first:Float
     var second:Float
-    var mathOp: MathOperation
+    var mathOp: MathOperator
     var result: Float
-    init(first:Float, second:Float, mathOp: MathOperation) {
+    init(first:Float, second:Float, mathOp: MathOperator) {
         self.first = first
         self.second = second
         self.mathOp = mathOp

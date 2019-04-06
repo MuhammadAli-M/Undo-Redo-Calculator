@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum MathOperation{
+enum MathOperator{
     case add
     case sub
     case mul
     case div
     
-    var inverse:MathOperation{
+    var inverse:MathOperator{
         switch self {
         case .add:  return .sub
         case .sub:  return .add
@@ -23,18 +23,18 @@ enum MathOperation{
         }
     }
     
-    private static var descriptionDict : [String:MathOperation]{
+    private static var descriptionDict : [String:MathOperator]{
         return ["+":.add,
                 "-":.sub,
                 "*":.mul,
                 "/":.div]
     }
     var description: String{
-        return MathOperation.descriptionDict.getKey(forValue: self) ?? ""
+        return MathOperator.descriptionDict.getKey(forValue: self) ?? ""
     }
     
-    static func operationForString(stringOperator: String) -> MathOperation?{
-        return MathOperation.descriptionDict[stringOperator]
+    static func operationForString(stringOperator: String) -> MathOperator?{
+        return MathOperator.descriptionDict[stringOperator]
     }
 }
 
