@@ -44,6 +44,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="secondTextFieldEditingChanged:" destination="Vf8-XI-Xs4" eventType="editingChanged" id="s6t-Tc-UkT"/>
+                                        </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vlI-Gs-yjz">
                                         <rect key="frame" x="8" y="66.5" width="327" height="30"/>
