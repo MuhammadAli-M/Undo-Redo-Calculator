@@ -100,10 +100,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func undoButtonDidTapped(_ sender: UIButton) {
-        if calculator.canRedo(){
-        calculator.undo()
-        appResult = calculator.result
-        print("result:  \(appResult)")
+        if calculator.canUndo(){
+            calculator.undo()
+            appResult = calculator.result
+            print("result:  \(appResult)")
         }
         updateUndoRedoButtonStates()
     }
