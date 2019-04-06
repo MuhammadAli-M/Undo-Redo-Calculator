@@ -19,6 +19,7 @@
 		34853E2A225880D900D12723 /* OperationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34853E28225880D900D12723 /* OperationCollectionViewCell.xib */; };
 		34853E2B225880D900D12723 /* OperationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E29225880D900D12723 /* OperationCollectionViewCell.swift */; };
 		34853E2E225881D900D12723 /* ViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E2D225881D900D12723 /* ViewController+CollectionView.swift */; };
+		34853E322258F59C00D12723 /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E312258F59C00D12723 /* SafeArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		34853E28225880D900D12723 /* OperationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperationCollectionViewCell.xib; sourceTree = "<group>"; };
 		34853E29225880D900D12723 /* OperationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCollectionViewCell.swift; sourceTree = "<group>"; };
 		34853E2D225881D900D12723 /* ViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		34853E312258F59C00D12723 /* SafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				34853E2422580F0A00D12723 /* Calculator.swift */,
 				34853E1D2258051600D12723 /* Operation.swift */,
 				34853E1B2258029900D12723 /* MathOperation.swift */,
+				34853E312258F59C00D12723 /* SafeArray.swift */,
 				34853E0D2257EFE200D12723 /* Main.storyboard */,
 				34853E102257EFE500D12723 /* Assets.xcassets */,
 				34853E122257EFE500D12723 /* LaunchScreen.storyboard */,
@@ -172,6 +175,7 @@
 				34853E1C2258029900D12723 /* MathOperation.swift in Sources */,
 				34853E2522580F0A00D12723 /* Calculator.swift in Sources */,
 				34853E1E2258051600D12723 /* Operation.swift in Sources */,
+				34853E322258F59C00D12723 /* SafeArray.swift in Sources */,
 				34853E2E225881D900D12723 /* ViewController+CollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
