@@ -24,6 +24,7 @@ class Calculator {
     }
     
     func undo(){
+        if canUndo(){
         undoCount += 1
         if var op = undoStack[undoStack.count - undoCount] {
             undoStack.push(element: op.reverse())
@@ -32,10 +33,14 @@ class Calculator {
             op.first = result
             op.unExecute()
             result = op.result
+            }
+        }else{
+            print("No more undo")
         }
     }
     
     func redo(){
+        if canRedo(){
         let op = redoStack.pop()
         undoCount = 0   // To start undo from the top of undoStack
         if var op = op {
@@ -44,6 +49,17 @@ class Calculator {
             op.execute()
             result = op.result
         }
+        }else{
+            print("No more redo")
+        }
+    }
+    
+    func canUndo()->Bool{
+        return (undoStack.count - undoCount-1) >= 0 ? true:false
+    }
+    
+    func canRedo()->Bool{
+        return !redoStack.isEmpty
     }
 }
 
