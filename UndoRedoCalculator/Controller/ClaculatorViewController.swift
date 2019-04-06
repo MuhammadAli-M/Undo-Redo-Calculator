@@ -25,7 +25,7 @@ class ClaculatorViewController: UIViewController {
     @IBOutlet weak var equalButton: UIButton!
     
     var calculator = Calculator()
-    var operationsHistoryList = SafeArray<Operation>() // Shared resource
+    var operationsHistoryList = SafeArray<Operation>() 
     
     var appResult = SafeFloat(0)
     
@@ -49,7 +49,7 @@ class ClaculatorViewController: UIViewController {
         if let mathOp =  MathOperator.from(stringOperator: sender.titleLabel?.text ?? ""){
             self.mathOperator = mathOp
         }
-        print("Operator \(mathOperator?.description) did tapped")
+        print("Operator \(mathOperator?.description ?? "") did tapped")
         deselectAllOperator(except: sender.titleLabel?.text)
         updateEqualButtonState()
     }

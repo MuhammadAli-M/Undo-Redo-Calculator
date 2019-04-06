@@ -39,6 +39,7 @@ struct Operation:CustomStringConvertible{
         return op
     }
     
+    
     func evaluate(first:Float, second:Float) -> Float {
         switch mathOp {
             //TODO: Handle zero-division and results out of valid range
@@ -51,6 +52,7 @@ struct Operation:CustomStringConvertible{
 }
 
 extension Float{
+    ///Cleans the float value depends on the remainder value.
     var getCleanString:String{
         if (self.truncatingRemainder(dividingBy: 1) == 0){
             return String(format: "%.0f", self)

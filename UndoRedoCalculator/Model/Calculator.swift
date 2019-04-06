@@ -23,13 +23,14 @@ class Calculator {
         redoStack.clear()
     }
     
+    /// Undo the last done operation
     func undo(){
         if canUndo(){
             // TODO: refactor
         undoCount += 1
-        if var op = undoStack[undoStack.count - undoCount] {
+        if var op = undoStack[undoStack.count - undoCount] { // To go back with number of undos
             undoStack.push(element: op.reverse())
-            undoCount += 1
+            undoCount += 1          // To consider pushing this undo operation in the undo stack
             redoStack.push(element: op)
             op.first = result
             op.unExecute()
@@ -40,6 +41,7 @@ class Calculator {
         }
     }
     
+    /// Redo the last undone operation
     func redo(){
         if canRedo(){
         let op = redoStack.pop()
@@ -55,10 +57,12 @@ class Calculator {
         }
     }
     
+    /// Validates that Redo operation can be done.
     func canUndo()->Bool{
         return (undoStack.count - undoCount-1) >= 0 ? true:false
     }
     
+    /// Validates that Redo operation can be done.
     func canRedo()->Bool{
         return !redoStack.isEmpty
     }
