@@ -41,6 +41,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextView()
     }
     
     @IBAction func mathOperatorDidTapped(_ sender: UIButton) {
