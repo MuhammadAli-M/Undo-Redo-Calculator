@@ -16,6 +16,9 @@
 		34853E1E2258051600D12723 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E1D2258051600D12723 /* Operation.swift */; };
 		34853E2522580F0A00D12723 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E2422580F0A00D12723 /* Calculator.swift */; };
 		34853E272258680000D12723 /* ViewController+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E262258680000D12723 /* ViewController+UITextField.swift */; };
+		34853E2A225880D900D12723 /* OperationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34853E28225880D900D12723 /* OperationCollectionViewCell.xib */; };
+		34853E2B225880D900D12723 /* OperationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E29225880D900D12723 /* OperationCollectionViewCell.swift */; };
+		34853E2E225881D900D12723 /* ViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E2D225881D900D12723 /* ViewController+CollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		34853E1D2258051600D12723 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		34853E2422580F0A00D12723 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		34853E262258680000D12723 /* ViewController+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UITextField.swift"; sourceTree = "<group>"; };
+		34853E28225880D900D12723 /* OperationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperationCollectionViewCell.xib; sourceTree = "<group>"; };
+		34853E29225880D900D12723 /* OperationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCollectionViewCell.swift; sourceTree = "<group>"; };
+		34853E2D225881D900D12723 /* ViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,8 @@
 				34853E092257EFE200D12723 /* AppDelegate.swift */,
 				34853E0B2257EFE200D12723 /* ViewController.swift */,
 				34853E262258680000D12723 /* ViewController+UITextField.swift */,
+				34853E2D225881D900D12723 /* ViewController+CollectionView.swift */,
+				34853E2C2258814800D12723 /* OperationCollectionViewCell */,
 				34853E2422580F0A00D12723 /* Calculator.swift */,
 				34853E1D2258051600D12723 /* Operation.swift */,
 				34853E1B2258029900D12723 /* MathOperation.swift */,
@@ -74,6 +82,15 @@
 				34853E152257EFE500D12723 /* Info.plist */,
 			);
 			path = UndoRedoCalculator;
+			sourceTree = "<group>";
+		};
+		34853E2C2258814800D12723 /* OperationCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				34853E29225880D900D12723 /* OperationCollectionViewCell.swift */,
+				34853E28225880D900D12723 /* OperationCollectionViewCell.xib */,
+			);
+			path = OperationCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34853E2A225880D900D12723 /* OperationCollectionViewCell.xib in Resources */,
 				34853E142257EFE500D12723 /* LaunchScreen.storyboard in Resources */,
 				34853E112257EFE500D12723 /* Assets.xcassets in Resources */,
 				34853E0F2257EFE200D12723 /* Main.storyboard in Resources */,
@@ -148,11 +166,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				34853E272258680000D12723 /* ViewController+UITextField.swift in Sources */,
+				34853E2B225880D900D12723 /* OperationCollectionViewCell.swift in Sources */,
 				34853E0C2257EFE200D12723 /* ViewController.swift in Sources */,
 				34853E0A2257EFE200D12723 /* AppDelegate.swift in Sources */,
 				34853E1C2258029900D12723 /* MathOperation.swift in Sources */,
 				34853E2522580F0A00D12723 /* Calculator.swift in Sources */,
 				34853E1E2258051600D12723 /* Operation.swift in Sources */,
+				34853E2E225881D900D12723 /* ViewController+CollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
