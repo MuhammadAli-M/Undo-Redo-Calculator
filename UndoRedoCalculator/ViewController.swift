@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupTextView()
         setupCollectionView()
+        updateUndoRedoButtonStates()
         updateEqualButtonState()
     }
     
