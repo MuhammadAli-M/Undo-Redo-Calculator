@@ -9,11 +9,11 @@
 import Foundation
 
 struct Operation:CustomStringConvertible{
-    var first:Int
-    var second:Int
+    var first:Float
+    var second:Float
     var mathOp: MathOperation
-    var result: Int
-    init(first:Int, second:Int, mathOp: MathOperation) {
+    var result: Float
+    init(first:Float, second:Float, mathOp: MathOperation) {
         self.first = first
         self.second = second
         self.mathOp = mathOp
@@ -21,7 +21,7 @@ struct Operation:CustomStringConvertible{
     }
     
     var description: String {
-        return "\(mathOp.description)\(second)"
+        return "\(mathOp.description)\(second.getCleanString)"
     }
     
     mutating func execute(){
@@ -39,12 +39,22 @@ struct Operation:CustomStringConvertible{
         return op
     }
     
-    func evaluate(first:Int, second:Int) -> Int {
+    func evaluate(first:Float, second:Float) -> Float {
         switch mathOp {
         case .add: return first + second
         case .sub: return first - second
         case .mul: return first * second
         case .div: return first / second //TODO: Handle zero-division
+        }
+    }
+}
+
+extension Float{
+    var getCleanString:String{
+        if (self.truncatingRemainder(dividingBy: 1) == 0){
+            return String(format: "%.0f", self)
+        }else{
+            return String(self)
         }
     }
 }

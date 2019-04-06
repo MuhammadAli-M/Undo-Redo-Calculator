@@ -13,7 +13,7 @@ class Calculator {
     var undoStack = Stack<Operation>()
     var redoStack = Stack<Operation>()
     var undoCount = 0
-    var result = 0
+    var result:Float = 0
     
     
     func doOperation( operation: inout Operation) {

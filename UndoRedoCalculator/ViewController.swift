@@ -26,9 +26,9 @@ class ViewController: UIViewController {
     
     var calculator = Calculator()
     var operationsHistoryList = [Operation]()
-    var appResult = 0{ //TODO: Shared resource
+    var appResult:Float = 0{ //TODO: Shared resource
         didSet{
-            resultLabel.text = "\(appResult)"
+            resultLabel.text = appResult.getCleanString
         }
     }
     var mathOperator:MathOperation?
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     
     @IBAction func equalButtonDidTapped(_ sender: UIButton) {
         guard let numberString = secondOperandTextField.text,
-            let number = Int(numberString),
+            let number = Float(numberString),
             let mathOperator = mathOperator
             else{return}
         
