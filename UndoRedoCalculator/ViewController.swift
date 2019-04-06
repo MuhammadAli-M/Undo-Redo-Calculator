@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var equalButton: UIButton!
     
     var calculator = Calculator()
-    
+    var operationsHistoryList = [Operation]()
     var appResult = 0{ //TODO: Shared resource
         didSet{
             resultLabel.text = "\(appResult)"
@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextView()
+        setupCollectionView()
         updateEqualButtonState()
     }
     
@@ -88,6 +89,9 @@ class ViewController: UIViewController {
         calculator.doOperation(operation: &operation)
         appResult = calculator.result
         print("result:  \(appResult)")
+        
+        operationsHistoryList.insert(operation, at: 0) 
+        historyCollectionView.reloadData()
         
         secondOperandTextField.text = ""
         deselectAllOperator()
