@@ -21,6 +21,7 @@
 		34853E2E225881D900D12723 /* ViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E2D225881D900D12723 /* ViewController+CollectionView.swift */; };
 		34853E322258F59C00D12723 /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E312258F59C00D12723 /* SafeArray.swift */; };
 		34853E3422591C2300D12723 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E3322591C2300D12723 /* Stack.swift */; };
+		34853E36225928C500D12723 /* SafeFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E35225928C500D12723 /* SafeFloat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		34853E2D225881D900D12723 /* ViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		34853E312258F59C00D12723 /* SafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 		34853E3322591C2300D12723 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		34853E35225928C500D12723 /* SafeFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeFloat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				34853E1D2258051600D12723 /* Operation.swift */,
 				34853E1B2258029900D12723 /* MathOperation.swift */,
 				34853E312258F59C00D12723 /* SafeArray.swift */,
+				34853E35225928C500D12723 /* SafeFloat.swift */,
 				34853E0D2257EFE200D12723 /* Main.storyboard */,
 				34853E102257EFE500D12723 /* Assets.xcassets */,
 				34853E122257EFE500D12723 /* LaunchScreen.storyboard */,
@@ -181,6 +184,7 @@
 				34853E1E2258051600D12723 /* Operation.swift in Sources */,
 				34853E322258F59C00D12723 /* SafeArray.swift in Sources */,
 				34853E2E225881D900D12723 /* ViewController+CollectionView.swift in Sources */,
+				34853E36225928C500D12723 /* SafeFloat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
