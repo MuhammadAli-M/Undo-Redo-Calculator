@@ -22,9 +22,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
             layout.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
         }
         
-        let textSize = operationsHistoryList[indexPath.row].description.size(withAttributes:[
+        let textSize = operationsHistoryList[indexPath.row]?.description.size(withAttributes:[
             NSAttributedStringKey.font : OperationCollectionViewCell.labelFont])
-        return CGSize(width: textSize.width + 30, height: 50)
+        return CGSize(width: (textSize?.width ?? 0) + 30, height: 50)
     }
 }
 
@@ -36,13 +36,13 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OperationCollectionViewCell.identifier, for: indexPath) as! OperationCollectionViewCell
-        cell.operationLabel.text = operationsHistoryList[indexPath.row].description
+        cell.operationLabel.text = operationsHistoryList[indexPath.row]?.description
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        var operation = operationsHistoryList[indexPath.row].reverse()
+        guard var operation = operationsHistoryList[indexPath.row]?.reverse() else{return}
         operation.first = appResult
         calculator.doOperation(operation: &operation)
         appResult = calculator.result

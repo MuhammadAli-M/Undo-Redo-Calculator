@@ -68,7 +68,7 @@ class Calculator {
 // MARK: Stack
 
 struct Stack<T> {
-    private var list:[T] = []
+    private var list = SafeArray<T>()
     
     mutating func push(element: T){
         list.append(element)
@@ -98,10 +98,6 @@ struct Stack<T> {
     }
     
     subscript(_ index:Int) -> T?{
-        if (index >= 0 && index < list.count){
-            return list[index]
-        }else{
-            return nil
-        }
+        return list[index]
     }
 }

@@ -25,7 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var equalButton: UIButton!
     
     var calculator = Calculator()
-    var operationsHistoryList = [Operation]()
+//    var operationsHistoryList = [Operation]() //TODO: Shared resource
+    var operationsHistoryList = SafeArray<Operation>() //TODO: Shared resource
     var appResult:Float = 0{ //TODO: Shared resource
         didSet{
             resultLabel.text = appResult.getCleanString
