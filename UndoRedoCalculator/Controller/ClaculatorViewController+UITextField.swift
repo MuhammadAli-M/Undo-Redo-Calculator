@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController:UITextFieldDelegate{
+extension ClaculatorViewController:UITextFieldDelegate{
     
     func setupTextView() {
         secondOperandTextField.delegate = self

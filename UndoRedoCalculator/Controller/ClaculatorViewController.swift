@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ClaculatorViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var secondOperandTextField: UITextField!
@@ -123,7 +123,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController:SafeFloatDelegate{
+extension ClaculatorViewController:SafeFloatDelegate{
     
     func setupResultLabel(){
         appResult.delegate = self

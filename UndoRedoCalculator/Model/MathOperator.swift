@@ -33,7 +33,7 @@ enum MathOperator{
         return MathOperator.descriptionDict.getKey(forValue: self) ?? ""
     }
     
-    static func operationForString(stringOperator: String) -> MathOperator?{
+    static func from(stringOperator: String) -> MathOperator?{
         return MathOperator.descriptionDict[stringOperator]
     }
 }

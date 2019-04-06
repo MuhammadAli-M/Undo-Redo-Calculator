@@ -41,10 +41,11 @@ struct Operation:CustomStringConvertible{
     
     func evaluate(first:Float, second:Float) -> Float {
         switch mathOp {
+            //TODO: Handle zero-division and results out of valid range
         case .add: return first + second
         case .sub: return first - second
         case .mul: return first * second
-        case .div: return first / second //TODO: Handle zero-division
+        case .div: return first / second
         }
     }
 }

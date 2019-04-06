@@ -9,7 +9,7 @@
 
 import UIKit
 
-extension ViewController: UICollectionViewDelegateFlowLayout{
+extension ClaculatorViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
@@ -29,7 +29,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
 }
 
 
-extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+extension ClaculatorViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return operationsHistoryList.count
     }
