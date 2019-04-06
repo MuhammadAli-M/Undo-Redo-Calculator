@@ -66,15 +66,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func undoButtonDidTapped(_ sender: UIButton) {
+        if calculator.canRedo(){
         calculator.undo()
         appResult = calculator.result
         print("result:  \(appResult)")
+        }
     }
     
     @IBAction func redoButtonDidTapped(_ sender: UIButton) {
+        if calculator.canRedo(){
         calculator.redo()
         appResult = calculator.result
         print("result:  \(appResult)")
+        }
     }
     
 
