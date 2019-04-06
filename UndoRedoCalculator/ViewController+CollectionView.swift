@@ -9,6 +9,26 @@
 
 import UIKit
 
+extension ViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
+            let xInset: CGFloat = 5
+            let yInset: CGFloat = 5
+            let cellSpacing: CGFloat = 5
+            let lineSpacing: CGFloat = 5
+            layout.minimumInteritemSpacing = cellSpacing
+            layout.minimumLineSpacing = lineSpacing
+            layout.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
+        }
+        
+        let textSize = operationsHistoryList[indexPath.row].description.size(withAttributes:[
+            NSAttributedStringKey.font : OperationCollectionViewCell.labelFont])
+        return CGSize(width: textSize.width + 30, height: 50)
+    }
+}
+
+
 extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return operationsHistoryList.count
