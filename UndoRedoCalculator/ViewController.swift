@@ -25,13 +25,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var equalButton: UIButton!
     
     var calculator = Calculator()
-//    var operationsHistoryList = [Operation]() //TODO: Shared resource
-    var operationsHistoryList = SafeArray<Operation>() //TODO: Shared resource
-    var appResult:Float = 0{ //TODO: Shared resource
-        didSet{
-            resultLabel.text = appResult.getCleanString
-        }
-    }
+    var operationsHistoryList = SafeArray<Operation>() // Shared resource
+    
+    var appResult = SafeFloat(0)
+    
     var mathOperator:MathOperation?
     var operatorButtons:[UIButton]{
         get{
@@ -39,9 +36,9 @@ class ViewController: UIViewController {
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupResultLabel()
         setupTextView()
         setupCollectionView()
         updateUndoRedoButtonStates()
@@ -49,10 +46,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mathOperatorDidTapped(_ sender: UIButton) {
-        print("Operator did tapped")
         if let mathOp =  MathOperation.operationForString(stringOperator: sender.titleLabel?.text ?? ""){
             self.mathOperator = mathOp
         }
+        print("Operator \(mathOperator) did tapped")
         deselectAllOperator(except: sender.titleLabel?.text)
         updateEqualButtonState()
     }
@@ -87,10 +84,10 @@ class ViewController: UIViewController {
             let mathOperator = mathOperator
             else{return}
         
-        var operation = Operation(first: appResult, second: number, mathOp: mathOperator)
+        var operation = Operation(first: appResult.get(), second: number, mathOp: mathOperator)
         calculator.doOperation(operation: &operation)
-        appResult = calculator.result
-        print("result:  \(appResult)")
+        appResult.set(calculator.result)
+        print("result:  \(appResult.get())")
         
         operationsHistoryList.insert(operation, at: 0) 
         historyCollectionView.reloadData()
@@ -104,8 +101,8 @@ class ViewController: UIViewController {
     @IBAction func undoButtonDidTapped(_ sender: UIButton) {
         if calculator.canUndo(){
             calculator.undo()
-            appResult = calculator.result
-            print("result:  \(appResult)")
+            appResult.set(calculator.result)
+            print("result:  \(appResult.get())")
         }
         updateUndoRedoButtonStates()
     }
@@ -113,8 +110,8 @@ class ViewController: UIViewController {
     @IBAction func redoButtonDidTapped(_ sender: UIButton) {
         if calculator.canRedo(){
         calculator.redo()
-        appResult = calculator.result
-        print("result:  \(appResult)")
+        appResult.set(calculator.result)
+        print("result:  \(appResult.get())")
         }
         updateUndoRedoButtonStates()
     }
@@ -123,5 +120,18 @@ class ViewController: UIViewController {
         redoButton.isEnabled = calculator.canRedo()
         undoButton.isEnabled = calculator.canUndo()
     }
+}
+
+
+extension ViewController:SafeFloatDelegate{
+    
+    func setupResultLabel(){
+        appResult.delegate = self
+    }
+    func safeFloatValueDidSet() {
+        resultLabel.text = appResult.get().getCleanString
+    }
+    
+    
 }
 

@@ -43,9 +43,9 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard var operation = operationsHistoryList[indexPath.row]?.reverse() else{return}
-        operation.first = appResult
+        operation.first = appResult.get()
         calculator.doOperation(operation: &operation)
-        appResult = calculator.result
+        appResult.set(calculator.result)
         print("result: \(appResult)")
         operationsHistoryList.remove(at: indexPath.row)
         collectionView.reloadData()
