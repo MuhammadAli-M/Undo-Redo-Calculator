@@ -24,22 +24,57 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var equalButton: UIButton!
     
+    var calculator = Calculator()
     
+    var appResult = 0{ //TODO: Shared resource
+        didSet{
+            resultLabel.text = "\(appResult)"
+        }
+    }
+    var mathOperator:MathOperation?
+    var operatorButtons:[UIButton]{
+        get{
+            return [plusButton, minusButton, multiplyButton, divisionButton]
+        }
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func mathOperatorDidTapped(_ sender: UIButton) {
+        print("Operator did tapped")
+        if let mathOp =  MathOperation.operationForString(stringOperator: sender.titleLabel?.text ?? ""){
+            self.mathOperator = mathOp
+        }
+        
     }
     
+    
+    
     @IBAction func equalButtonDidTapped(_ sender: UIButton) {
+        guard let numberString = secondOperandTextField.text,
+            let number = Int(numberString),
+            let mathOperator = mathOperator
+            else{return}
+        
+        var operation = Operation(first: appResult, second: number, mathOp: mathOperator)
+        calculator.doOperation(operation: &operation)
+        appResult = calculator.result
+        print("result:  \(appResult)")
     }
     
     @IBAction func undoButtonDidTapped(_ sender: UIButton) {
+        calculator.undo()
+        appResult = calculator.result
+        print("result:  \(appResult)")
     }
     
     @IBAction func redoButtonDidTapped(_ sender: UIButton) {
+        calculator.redo()
+        appResult = calculator.result
+        print("result:  \(appResult)")
     }
     
 
