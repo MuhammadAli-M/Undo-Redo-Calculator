@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Operation{
+struct Operation:CustomStringConvertible{
     var first:Int
     var second:Int
     var mathOp: MathOperation
@@ -18,6 +18,10 @@ struct Operation{
         self.second = second
         self.mathOp = mathOp
         self.result = 0
+    }
+    
+    var description: String {
+        return "\(mathOp.description)\(second)"
     }
     
     mutating func execute(){

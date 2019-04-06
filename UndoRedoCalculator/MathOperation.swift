@@ -29,9 +29,17 @@ enum MathOperation{
                 "*":.mul,
                 "/":.div]
     }
+    var description: String{
+        return MathOperation.descriptionDict.getKey(forValue: self) ?? ""
+    }
     
     static func operationForString(stringOperator: String) -> MathOperation?{
         return MathOperation.descriptionDict[stringOperator]
     }
 }
 
+extension Dictionary where Value: Equatable {
+    func getKey(forValue val: Value) -> Key? {
+        return first(where: { $1 == val })?.key
+    }
+}
