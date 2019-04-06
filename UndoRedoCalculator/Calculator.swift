@@ -10,10 +10,10 @@ import Foundation
 
 class Calculator {
     
-    var undoStack = Stack<Operation>()
-    var redoStack = Stack<Operation>()
-    var undoCount = 0
-    var result:Float = 0
+    private var undoStack = Stack<Operation>()
+    private var redoStack = Stack<Operation>()
+    private var undoCount = 0
+    private(set) var result:Float = 0
     
     
     func doOperation( operation: inout Operation) {
@@ -25,6 +25,7 @@ class Calculator {
     
     func undo(){
         if canUndo(){
+            // TODO: refactor
         undoCount += 1
         if var op = undoStack[undoStack.count - undoCount] {
             undoStack.push(element: op.reverse())
