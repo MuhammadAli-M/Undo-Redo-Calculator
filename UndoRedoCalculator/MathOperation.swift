@@ -23,11 +23,15 @@ enum MathOperation{
         }
     }
     
-    private var descriptionDict : [String:MathOperation]{
+    private static var descriptionDict : [String:MathOperation]{
         return ["+":.add,
                 "-":.sub,
                 "*":.mul,
                 "/":.div]
+    }
+    
+    static func operationForString(stringOperator: String) -> MathOperation?{
+        return MathOperation.descriptionDict[stringOperator]
     }
 }
 
