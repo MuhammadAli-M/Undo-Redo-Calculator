@@ -86,7 +86,7 @@ class CalculatorViewController: UIViewController {
             else{return}
         
         var operation = Operation(first: appResult.get(), second: number, mathOp: mathOperator)
-        calculator.doOperation(operation: &operation)
+        calculator.doOperation(operation: operation)
 
         operationsHistoryList.insert(operation, at: 0)
         historyCollectionView.reloadData()

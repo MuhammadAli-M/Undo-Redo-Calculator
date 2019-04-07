@@ -24,15 +24,15 @@ class CalculatorTestCase: XCTestCase {
     func testComplexUndoAndRedo() {
         var result = SafeFloat(0)
         var op1 = Operation(first: result.get(), second: 3, mathOp: .add)
-        calculator.doOperation(operation: &op1)
+        calculator.doOperation(operation: op1)
         result.set(calculator.result ?? Float.nan)
         
         var op2 = Operation(first: result.get() , second: 2, mathOp: .add)
-        calculator.doOperation(operation: &op2)
+        calculator.doOperation(operation: op2)
         result.set(calculator.result ?? Float.nan)
         
         var op3 = Operation(first: result.get() , second: 5, mathOp: .mul)
-        calculator.doOperation(operation: &op3)
+        calculator.doOperation(operation: op3)
         result.set(calculator.result ?? Float.nan)
         
         calculator.undo()
@@ -45,7 +45,7 @@ class CalculatorTestCase: XCTestCase {
         result.set(calculator.result ?? Float.nan)
         
         var op4 = Operation(first: result.get() , second: 3, mathOp: .add)
-        calculator.doOperation(operation: &op4)
+        calculator.doOperation(operation: op4)
         result.set(calculator.result ?? Float.nan)
         
         calculator.undo()

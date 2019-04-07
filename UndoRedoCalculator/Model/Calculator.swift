@@ -22,7 +22,7 @@ class Calculator {
     private(set) var result:Float? = 0
     weak var delegate: CalculatorDelegate?
     
-    func doOperation( operation: inout Operation) {
+    func doOperation( operation: Operation) {
         operation.execute()
         undoStack.push(element: operation)
         result = operation.result

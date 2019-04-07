@@ -44,7 +44,7 @@ extension CalculatorViewController: UICollectionViewDelegate,UICollectionViewDat
         
         guard var operation = operationsHistoryList[indexPath.row]?.reverse() else{return}
         operation.first = appResult.get()
-        calculator.doOperation(operation: &operation)
+        calculator.doOperation(operation: operation)
         appResult.set(calculator.result ?? Float.nan) // TODO:Needs to be handled
         print("result: \(appResult.get())")
         operationsHistoryList.remove(at: indexPath.row)
