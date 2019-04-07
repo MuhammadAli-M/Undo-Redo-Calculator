@@ -87,6 +87,9 @@ class CalculatorViewController: UIViewController {
         
         var operation = Operation(first: appResult.get(), second: number, mathOp: mathOperator)
         calculator.doOperation(operation: &operation)
+
+        operationsHistoryList.insert(operation, at: 0)
+        historyCollectionView.reloadData()
     }
     
     @IBAction func undoButtonDidTapped(_ sender: UIButton) {
@@ -120,9 +123,6 @@ extension CalculatorViewController : CalculatorDelegate{
     func operationDidDone(operation: Operation) {
         appResult.set(calculator.result ?? Float.nan) // TODO:Needs to be handled
         print("result:  \(appResult.get())")
-        
-        operationsHistoryList.insert(operation, at: 0)
-        historyCollectionView.reloadData()
         
         secondOperandTextField.text = ""
         deselectAllOperator()
