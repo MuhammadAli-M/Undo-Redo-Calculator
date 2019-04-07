@@ -8,19 +8,26 @@
 
 import Foundation
 
+protocol CalculatorDelegate:class {
+    func operationDidDone(operation: Operation)
+    func operationDidUndone(operation: Operation)
+    func operationDidRedone(operation: Operation)
+}
+
 class Calculator {
     
     private var undoStack = Stack<Operation>()
     private var redoStack = Stack<Operation>()
     private var undoCount = 0
     private(set) var result:Float = 0
-    
+    weak var delegate: CalculatorDelegate?
     
     func doOperation( operation: inout Operation) {
         operation.execute()
         undoStack.push(element: operation)
         result = operation.result
         redoStack.clear()
+        delegate?.operationDidDone(operation: operation)
     }
     
     /// Undo the last done operation
@@ -28,13 +35,14 @@ class Calculator {
         if canUndo(){
             // TODO: refactor
         undoCount += 1
-        if var op = undoStack[undoStack.count - undoCount] { // To go back with number of undos
-            undoStack.push(element: op.reverse())
+        if var operation = undoStack[undoStack.count - undoCount] { // To go back with number of undos
+            undoStack.push(element: operation.reverse())
             undoCount += 1          // To consider pushing this undo operation in the undo stack
-            redoStack.push(element: op)
-            op.first = result
-            op.unExecute()
-            result = op.result
+            redoStack.push(element: operation)
+            operation.first = result
+            operation.unExecute()
+            result = operation.result
+            delegate?.operationDidUndone(operation: operation)
             }
         }else{
             print("No more undo")
@@ -44,13 +52,14 @@ class Calculator {
     /// Redo the last undone operation
     func redo(){
         if canRedo(){
-        let op = redoStack.pop()
+        let operation = redoStack.pop()
         undoCount = 0   // To start undo from the top of undoStack
-        if var op = op {
-            undoStack.push(element: op)
-            op.first = result
-            op.execute()
-            result = op.result
+        if var operation = operation {
+            undoStack.push(element: operation)
+            operation.first = result
+            operation.execute()
+            result = operation.result
+            delegate?.operationDidRedone(operation: operation)
         }
         }else{
             print("No more redo")

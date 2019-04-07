@@ -38,6 +38,7 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        calculator.delegate = self
         setupResultLabel()
         setupTextView()
         setupCollectionView()
@@ -86,29 +87,14 @@ class CalculatorViewController: UIViewController {
         
         var operation = Operation(first: appResult.get(), second: number, mathOp: mathOperator)
         calculator.doOperation(operation: &operation)
-        appResult.set(calculator.result)
-        print("result:  \(appResult.get())")
-        
-        operationsHistoryList.insert(operation, at: 0) 
-        historyCollectionView.reloadData()
     }
     
     @IBAction func undoButtonDidTapped(_ sender: UIButton) {
-        if calculator.canUndo(){
-            calculator.undo()
-            appResult.set(calculator.result)
-            print("result:  \(appResult.get())")
-        }
-        updateUndoRedoButtonStates()
+        calculator.undo()
     }
     
     @IBAction func redoButtonDidTapped(_ sender: UIButton) {
-        if calculator.canRedo(){
         calculator.redo()
-        appResult.set(calculator.result)
-        print("result:  \(appResult.get())")
-        }
-        updateUndoRedoButtonStates()
     }
     
     func updateUndoRedoButtonStates(){
@@ -129,10 +115,32 @@ extension CalculatorViewController:SafeFloatDelegate{
 }
 
 
-extension CalculatorViewController{
+extension CalculatorViewController : CalculatorDelegate{
     
-    secondOperandTextField.text = ""
-    deselectAllOperator()
-    updateUndoRedoButtonStates()
-    equalButton.isEnabled = false
+    func operationDidDone(operation: Operation) {
+        appResult.set(calculator.result)
+        print("result:  \(appResult.get())")
+        
+        operationsHistoryList.insert(operation, at: 0)
+        historyCollectionView.reloadData()
+        
+        secondOperandTextField.text = ""
+        deselectAllOperator()
+        updateUndoRedoButtonStates()
+        equalButton.isEnabled = false
+    }
+    
+    func operationDidUndone(operation: Operation) {
+        appResult.set(calculator.result)
+        print("result:  \(appResult.get())")
+        updateUndoRedoButtonStates()
+    }
+    
+    func operationDidRedone(operation: Operation) {
+        appResult.set(calculator.result)
+        print("result:  \(appResult.get())")
+        updateUndoRedoButtonStates()
+    }
+    
+    
 }
