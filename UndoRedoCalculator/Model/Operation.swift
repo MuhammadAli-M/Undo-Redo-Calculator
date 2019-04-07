@@ -133,7 +133,7 @@ class MultiplyOperation: UndoableOperation {
     }
     
     func unexecute(first: Float?, second: Float?){
-        guard let first = first, let second = second else {return}
+        guard let first = first, first != 0, let second = second else {return}
         result = first / second
     }
 }
@@ -154,7 +154,7 @@ class DivisionOperation: UndoableOperation {
     }
     
     func execute(first: Float?, second: Float?){
-        guard let first = first, let second = second else {return}
+        guard let first = first, let second = second, second != 0 else {return}
         result = first / second
     }
     
