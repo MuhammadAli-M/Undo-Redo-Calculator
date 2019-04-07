@@ -48,7 +48,7 @@ class Calculator {
     func redo(){
         if canRedo(){
         let operation = undoRedoContainer.getNewRedoOperation()
-        if var operation = operation {
+        if let operation = operation {
             undoRedoContainer.AddUndo(operation: operation)
             operation.first = result
             operation.execute()

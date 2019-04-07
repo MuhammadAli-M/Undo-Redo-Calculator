@@ -42,7 +42,7 @@ extension CalculatorViewController: UICollectionViewDelegate,UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard var operation = operationsHistoryList[indexPath.row]?.reverse() else{return}
+        guard let operation = operationsHistoryList[indexPath.row]?.reverse() else{return}
         operation.first = appResult.get()
         calculator.doOperation(operation: operation)
         appResult.set(calculator.result ?? Float.nan) // TODO:Needs to be handled
