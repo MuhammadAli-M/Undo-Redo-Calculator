@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClaculatorViewController: UIViewController {
+class CalculatorViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var secondOperandTextField: UITextField!
@@ -91,11 +91,6 @@ class ClaculatorViewController: UIViewController {
         
         operationsHistoryList.insert(operation, at: 0) 
         historyCollectionView.reloadData()
-        
-        secondOperandTextField.text = ""
-        deselectAllOperator()
-        updateUndoRedoButtonStates()
-        equalButton.isEnabled = false
     }
     
     @IBAction func undoButtonDidTapped(_ sender: UIButton) {
@@ -123,7 +118,7 @@ class ClaculatorViewController: UIViewController {
 }
 
 
-extension ClaculatorViewController:SafeFloatDelegate{
+extension CalculatorViewController:SafeFloatDelegate{
     
     func setupResultLabel(){
         appResult.delegate = self
@@ -131,7 +126,13 @@ extension ClaculatorViewController:SafeFloatDelegate{
     func safeFloatValueDidSet() {
         resultLabel.text = appResult.get().getCleanString
     }
-    
-    
 }
 
+
+extension CalculatorViewController{
+    
+    secondOperandTextField.text = ""
+    deselectAllOperator()
+    updateUndoRedoButtonStates()
+    equalButton.isEnabled = false
+}

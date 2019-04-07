@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Claculator View Controller-->
+        <!--Calculator View Controller-->
         <scene sceneID="KT7-6j-JYk">
             <objects>
-                <viewController id="Vf8-XI-Xs4" customClass="ClaculatorViewController" customModule="UndoRedoCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vf8-XI-Xs4" customClass="CalculatorViewController" customModule="UndoRedoCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1nP-M0-Dda">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

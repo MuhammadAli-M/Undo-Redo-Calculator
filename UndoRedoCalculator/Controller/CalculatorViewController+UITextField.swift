@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ClaculatorViewController:UITextFieldDelegate{
+extension CalculatorViewController:UITextFieldDelegate{
     
     func setupTextView() {
         secondOperandTextField.delegate = self
