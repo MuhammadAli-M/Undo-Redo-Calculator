@@ -8,46 +8,159 @@
 
 import Foundation
 
-struct Operation:CustomStringConvertible{
-    var first:Float
-    var second:Float
+protocol RevereableOperation {
+    func reverse() -> Operation
+}
+
+protocol UndoableOperation: CustomStringConvertible {
+    func execute(first: Float?, second: Float?)
+    func unexecute(first: Float?, second: Float?)
+    var result:Float? {get}
+}
+class Operation:RevereableOperation{
+    lazy var operation: UndoableOperation = getOperation(mathOp: mathOp)
+    var first:Float?
+    var second:Float?
     var mathOp: MathOperator
-    var result: Float
-    init(first:Float, second:Float, mathOp: MathOperator) {
+    var result: Float?
+    init(first: Float?, second: Float? = nil, mathOp: MathOperator) {
         self.first = first
         self.second = second
         self.mathOp = mathOp
         self.result = 0
     }
+    func execute(){
+        operation.execute(first : first, second : second)  // Most operator take one or two parameters
+        result = operation.result
+    }
+    func unExecute(){
+        operation.unexecute(first : first, second : second)
+        result = operation.result
+    }
+    func reverse() -> Operation{
+        return Operation(first: first, second: second, mathOp: mathOp.inverse)
+    }
+    
+    private func getOperation(mathOp: MathOperator) -> UndoableOperation{
+        switch mathOp {
+        case .add:
+            return AdditionOperation(first: first, second: second)
+        case .sub:
+            return SubtractionOperation(first: first, second: second)
+        case .mul:
+            return MultiplyOperation(first: first, second: second)
+        case .div:
+            return DivisionOperation(first: first, second: second)
+        }
+    }
     
     var description: String {
-        return "\(mathOp.description)\(second.getCleanString)"
+        return "\(mathOp.description)\(operation.description)"
+    }
+}
+
+
+class AdditionOperation: UndoableOperation,CustomStringConvertible {
+    
+    var first:Float?
+    var second:Float?
+    var result: Float?
+    
+    init(first:Float?, second:Float?) {
+        self.first = first
+        self.second = second
     }
     
-    mutating func execute(){
-        result = evaluate(first: first, second: second)
+    var description: String { //different for each operation so it needs to be a property for each.
+        return "\(second?.getCleanString ?? "")"
     }
     
-    mutating func unExecute(){
-        self.mathOp = mathOp.inverse
-        result = evaluate(first: first, second: second)
+    func execute(first: Float?, second: Float?){
+        guard let first = first, let second = second else {return}
+        result = first + second
     }
     
-    func reverse() -> Operation{
-        var op = self
-        op.mathOp = self.mathOp.inverse
-        return op
+    func unexecute(first: Float?, second: Float?){
+        guard let first = first, let second = second else {return}
+        result = first - second
+    }
+}
+
+class SubtractionOperation: UndoableOperation {
+    
+    var first:Float?
+    var second:Float?
+    var result: Float?
+    
+    init(first:Float?, second:Float?) {
+        self.first = first
+        self.second = second
     }
     
+    var description: String { //different for each operation so it needs to be a property for each.
+        return "\(second?.getCleanString ?? "")"
+    }
     
-    func evaluate(first:Float, second:Float) -> Float {
-        switch mathOp {
-            //TODO: Handle zero-division and results out of valid range
-        case .add: return first + second
-        case .sub: return first - second
-        case .mul: return first * second
-        case .div: return first / second
-        }
+    func execute(first: Float?, second: Float?){
+        guard let first = first, let second = second else {return}
+        result = first - second
+    }
+    
+    func unexecute(first: Float?, second: Float?){
+        guard let first = first, let second = second else {return}
+        result = first + second
+    }
+}
+
+class MultiplyOperation: UndoableOperation {
+    
+    var first:Float?
+    var second:Float?
+    var result: Float?
+    
+    init(first:Float?, second:Float?) {
+        self.first = first
+        self.second = second
+    }
+    
+    var description: String { //different for each operation so it needs to be a property for each.
+        return "\(second?.getCleanString ?? "")"
+    }
+    
+    func execute(first: Float?, second: Float?){
+        guard let first = first, let second = second else {return}
+        result = first * second
+    }
+    
+    func unexecute(first: Float?, second: Float?){
+        guard let first = first, let second = second else {return}
+        result = first / second
+    }
+}
+
+class DivisionOperation: UndoableOperation {
+    
+    var first:Float?
+    var second:Float?
+    var result: Float?
+    
+    init(first:Float?, second:Float?) {
+        self.first = first
+        self.second = second
+    }
+    
+    var description: String { //different for each operation so it needs to be a property for each.
+        return "\(second?.getCleanString ?? "")"
+    }
+    
+    func execute(first: Float?, second: Float?){
+        guard let first = first, let second = second else {return}
+        result = first / second
+    }
+    
+    func unexecute(first: Float?, second: Float?){
+        guard let first = first, let second = second else {return}
+        result = first * second
     }
 }
 

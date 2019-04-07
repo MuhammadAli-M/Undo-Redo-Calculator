@@ -19,7 +19,7 @@ class Calculator {
     private var undoStack = Stack<Operation>()
     private var redoStack = Stack<Operation>()
     private var undoCount = 0
-    private(set) var result:Float = 0
+    private(set) var result:Float? = 0
     weak var delegate: CalculatorDelegate?
     
     func doOperation( operation: inout Operation) {

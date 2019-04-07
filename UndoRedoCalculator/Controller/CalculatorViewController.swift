@@ -118,7 +118,7 @@ extension CalculatorViewController:SafeFloatDelegate{
 extension CalculatorViewController : CalculatorDelegate{
     
     func operationDidDone(operation: Operation) {
-        appResult.set(calculator.result)
+        appResult.set(calculator.result ?? Float.nan) // TODO:Needs to be handled
         print("result:  \(appResult.get())")
         
         operationsHistoryList.insert(operation, at: 0)
@@ -131,13 +131,13 @@ extension CalculatorViewController : CalculatorDelegate{
     }
     
     func operationDidUndone(operation: Operation) {
-        appResult.set(calculator.result)
+        appResult.set(calculator.result ?? Float.nan) // TODO:Needs to be handled
         print("result:  \(appResult.get())")
         updateUndoRedoButtonStates()
     }
     
     func operationDidRedone(operation: Operation) {
-        appResult.set(calculator.result)
+        appResult.set(calculator.result ?? Float.nan) // TODO:Needs to be handled
         print("result:  \(appResult.get())")
         updateUndoRedoButtonStates()
     }

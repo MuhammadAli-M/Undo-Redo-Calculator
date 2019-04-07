@@ -22,7 +22,25 @@
 		34853E322258F59C00D12723 /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E312258F59C00D12723 /* SafeArray.swift */; };
 		34853E3422591C2300D12723 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E3322591C2300D12723 /* Stack.swift */; };
 		34853E36225928C500D12723 /* SafeFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E35225928C500D12723 /* SafeFloat.swift */; };
+		34C325002259BF8E001C6462 /* UndoRedoCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C324FF2259BF8E001C6462 /* UndoRedoCalculatorUITests.swift */; };
+		34C325072259BFD9001C6462 /* CalculatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C324F72259BDD2001C6462 /* CalculatorTestCase.swift */; };
+		34C325082259C01C001C6462 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E2422580F0A00D12723 /* Calculator.swift */; };
+		34C325092259C01C001C6462 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E1D2258051600D12723 /* Operation.swift */; };
+		34C3250A2259C01C001C6462 /* MathOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E1B2258029900D12723 /* MathOperator.swift */; };
+		34C3250B2259C01C001C6462 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E3322591C2300D12723 /* Stack.swift */; };
+		34C3250C2259C01C001C6462 /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E312258F59C00D12723 /* SafeArray.swift */; };
+		34C3250D2259C01C001C6462 /* SafeFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E35225928C500D12723 /* SafeFloat.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		34C325022259BF8E001C6462 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34853DFE2257EFE200D12723 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34853E052257EFE200D12723;
+			remoteInfo = UndoRedoCalculator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		34853E062257EFE200D12723 /* UndoRedoCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UndoRedoCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,10 +60,21 @@
 		34853E312258F59C00D12723 /* SafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 		34853E3322591C2300D12723 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		34853E35225928C500D12723 /* SafeFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeFloat.swift; sourceTree = "<group>"; };
+		34C324F72259BDD2001C6462 /* CalculatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTestCase.swift; sourceTree = "<group>"; };
+		34C324FD2259BF8E001C6462 /* UndoRedoCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UndoRedoCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34C324FF2259BF8E001C6462 /* UndoRedoCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoRedoCalculatorUITests.swift; sourceTree = "<group>"; };
+		34C325012259BF8E001C6462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		34853E032257EFE200D12723 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34C324FA2259BF8E001C6462 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,7 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				34853E082257EFE200D12723 /* UndoRedoCalculator */,
+				34C324FE2259BF8E001C6462 /* UndoRedoCalculatorUITests */,
 				34853E072257EFE200D12723 /* Products */,
+				34C324F72259BDD2001C6462 /* CalculatorTestCase.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				34853E062257EFE200D12723 /* UndoRedoCalculator.app */,
+				34C324FD2259BF8E001C6462 /* UndoRedoCalculatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +158,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		34C324FE2259BF8E001C6462 /* UndoRedoCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				34C324FF2259BF8E001C6462 /* UndoRedoCalculatorUITests.swift */,
+				34C325012259BF8E001C6462 /* Info.plist */,
+			);
+			path = UndoRedoCalculatorUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +187,24 @@
 			productReference = 34853E062257EFE200D12723 /* UndoRedoCalculator.app */;
 			productType = "com.apple.product-type.application";
 		};
+		34C324FC2259BF8E001C6462 /* UndoRedoCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34C325042259BF8E001C6462 /* Build configuration list for PBXNativeTarget "UndoRedoCalculatorUITests" */;
+			buildPhases = (
+				34C324F92259BF8E001C6462 /* Sources */,
+				34C324FA2259BF8E001C6462 /* Frameworks */,
+				34C324FB2259BF8E001C6462 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34C325032259BF8E001C6462 /* PBXTargetDependency */,
+			);
+			name = UndoRedoCalculatorUITests;
+			productName = UndoRedoCalculatorUITests;
+			productReference = 34C324FD2259BF8E001C6462 /* UndoRedoCalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,6 +217,10 @@
 				TargetAttributes = {
 					34853E052257EFE200D12723 = {
 						CreatedOnToolsVersion = 9.4;
+					};
+					34C324FC2259BF8E001C6462 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 34853E052257EFE200D12723;
 					};
 				};
 			};
@@ -175,6 +238,7 @@
 			projectRoot = "";
 			targets = (
 				34853E052257EFE200D12723 /* UndoRedoCalculator */,
+				34C324FC2259BF8E001C6462 /* UndoRedoCalculatorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +252,13 @@
 				34853E142257EFE500D12723 /* LaunchScreen.storyboard in Resources */,
 				34853E112257EFE500D12723 /* Assets.xcassets in Resources */,
 				34853E0F2257EFE200D12723 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34C324FB2259BF8E001C6462 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +283,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34C324F92259BF8E001C6462 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34C325082259C01C001C6462 /* Calculator.swift in Sources */,
+				34C325092259C01C001C6462 /* Operation.swift in Sources */,
+				34C3250A2259C01C001C6462 /* MathOperator.swift in Sources */,
+				34C3250B2259C01C001C6462 /* Stack.swift in Sources */,
+				34C3250C2259C01C001C6462 /* SafeArray.swift in Sources */,
+				34C3250D2259C01C001C6462 /* SafeFloat.swift in Sources */,
+				34C325072259BFD9001C6462 /* CalculatorTestCase.swift in Sources */,
+				34C325002259BF8E001C6462 /* UndoRedoCalculatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		34C325032259BF8E001C6462 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34853E052257EFE200D12723 /* UndoRedoCalculator */;
+			targetProxy = 34C325022259BF8E001C6462 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		34853E0D2257EFE200D12723 /* Main.storyboard */ = {
@@ -382,6 +476,42 @@
 			};
 			name = Release;
 		};
+		34C325052259BF8E001C6462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UndoRedoCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MA.UndoRedoCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UndoRedoCalculator;
+			};
+			name = Debug;
+		};
+		34C325062259BF8E001C6462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UndoRedoCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MA.UndoRedoCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UndoRedoCalculator;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -399,6 +529,15 @@
 			buildConfigurations = (
 				34853E192257EFE500D12723 /* Debug */,
 				34853E1A2257EFE500D12723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34C325042259BF8E001C6462 /* Build configuration list for PBXNativeTarget "UndoRedoCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34C325052259BF8E001C6462 /* Debug */,
+				34C325062259BF8E001C6462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
