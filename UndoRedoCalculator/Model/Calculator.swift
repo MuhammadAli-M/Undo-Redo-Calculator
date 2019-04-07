@@ -16,29 +16,24 @@ protocol CalculatorDelegate:class {
 
 class Calculator {
     
-    private var undoStack = Stack<Operation>()
-    private var redoStack = Stack<Operation>()
-    private var undoCount = 0
+    private var undoRedoContainer = UndoRedoOperationsContainer()
+    
     private(set) var result:Float? = 0
     weak var delegate: CalculatorDelegate?
     
     func doOperation( operation: Operation) {
         operation.execute()
-        undoStack.push(element: operation)
+        undoRedoContainer.AddUndo(operation: operation)
         result = operation.result
-        redoStack.clear()
+        undoRedoContainer.clearRedoOperations()
+        undoRedoContainer.resetUndoing()
         delegate?.operationDidDone(operation: operation)
     }
     
     /// Undo the last done operation
     func undo(){
         if canUndo(){
-            // TODO: refactor
-        undoCount += 1
-        if var operation = undoStack[undoStack.count - undoCount] { // To go back with number of undos
-            undoStack.push(element: operation.reverse())
-            undoCount += 1          // To consider pushing this undo operation in the undo stack
-            redoStack.push(element: operation)
+            if let operation = undoRedoContainer.getNewUndoOperation(){
             operation.first = result
             operation.unExecute()
             result = operation.result
@@ -52,10 +47,9 @@ class Calculator {
     /// Redo the last undone operation
     func redo(){
         if canRedo(){
-        let operation = redoStack.pop()
-        undoCount = 0   // To start undo from the top of undoStack
+        let operation = undoRedoContainer.getNewRedoOperation()
         if var operation = operation {
-            undoStack.push(element: operation)
+            undoRedoContainer.AddUndo(operation: operation)
             operation.first = result
             operation.execute()
             result = operation.result
@@ -68,12 +62,12 @@ class Calculator {
     
     /// Validates that Redo operation can be done.
     func canUndo()->Bool{
-        return (undoStack.count - undoCount-1) >= 0 ? true:false
+        return undoRedoContainer.isUndoAvaialable()
     }
     
     /// Validates that Redo operation can be done.
     func canRedo()->Bool{
-        return !redoStack.isEmpty
+        return undoRedoContainer.isRedoAvaialable()
     }
 }
 

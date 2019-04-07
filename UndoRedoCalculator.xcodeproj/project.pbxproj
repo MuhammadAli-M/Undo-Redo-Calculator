@@ -30,6 +30,8 @@
 		34C3250B2259C01C001C6462 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E3322591C2300D12723 /* Stack.swift */; };
 		34C3250C2259C01C001C6462 /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E312258F59C00D12723 /* SafeArray.swift */; };
 		34C3250D2259C01C001C6462 /* SafeFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34853E35225928C500D12723 /* SafeFloat.swift */; };
+		34C3250F2259E90B001C6462 /* UndoRedoOperationsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3250E2259E90B001C6462 /* UndoRedoOperationsContainer.swift */; };
+		34C325102259F7CD001C6462 /* UndoRedoOperationsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3250E2259E90B001C6462 /* UndoRedoOperationsContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 		34C324FD2259BF8E001C6462 /* UndoRedoCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UndoRedoCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C324FF2259BF8E001C6462 /* UndoRedoCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoRedoCalculatorUITests.swift; sourceTree = "<group>"; };
 		34C325012259BF8E001C6462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34C3250E2259E90B001C6462 /* UndoRedoOperationsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoRedoOperationsContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,7 @@
 				34853E1B2258029900D12723 /* MathOperator.swift */,
 				34853E3322591C2300D12723 /* Stack.swift */,
 				34853E312258F59C00D12723 /* SafeArray.swift */,
+				34C3250E2259E90B001C6462 /* UndoRedoOperationsContainer.swift */,
 				34853E35225928C500D12723 /* SafeFloat.swift */,
 			);
 			path = Model;
@@ -279,6 +283,7 @@
 				34853E1E2258051600D12723 /* Operation.swift in Sources */,
 				34853E322258F59C00D12723 /* SafeArray.swift in Sources */,
 				34853E2E225881D900D12723 /* CalculatorViewController+CollectionView.swift in Sources */,
+				34C3250F2259E90B001C6462 /* UndoRedoOperationsContainer.swift in Sources */,
 				34853E36225928C500D12723 /* SafeFloat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +299,7 @@
 				34C3250C2259C01C001C6462 /* SafeArray.swift in Sources */,
 				34C3250D2259C01C001C6462 /* SafeFloat.swift in Sources */,
 				34C325072259BFD9001C6462 /* CalculatorTestCase.swift in Sources */,
+				34C325102259F7CD001C6462 /* UndoRedoOperationsContainer.swift in Sources */,
 				34C325002259BF8E001C6462 /* UndoRedoCalculatorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
