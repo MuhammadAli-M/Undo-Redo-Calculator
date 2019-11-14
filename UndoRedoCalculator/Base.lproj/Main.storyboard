@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vf8-XI-Xs4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vf8-XI-Xs4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,14 +13,14 @@
             <objects>
                 <viewController id="Vf8-XI-Xs4" customClass="CalculatorViewController" customModule="UndoRedoCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1nP-M0-Dda">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0wm-UH-6H0">
-                                <rect key="frame" x="16" y="36" width="568" height="96.5"/>
+                                <rect key="frame" x="16" y="60" width="382" height="100.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ghc-qH-TKE">
-                                        <rect key="frame" x="245.5" y="0.0" width="77.5" height="20.5"/>
+                                        <rect key="frame" x="152.5" y="0.0" width="77.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaV-d2-Ixz">
                                                 <rect key="frame" x="0.0" y="0.0" width="67" height="20.5"/>
@@ -36,8 +37,7 @@
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the second operand" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fp-lP-kz3">
-                                        <rect key="frame" x="71" y="28.5" width="426" height="30"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="48" y="28.5" width="286.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
@@ -45,52 +45,52 @@
                                         </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vlI-Gs-yjz">
-                                        <rect key="frame" x="8" y="66.5" width="552" height="30"/>
+                                        <rect key="frame" x="8" y="70.5" width="366" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BO-vH-m1Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="52.5" height="30"/>
                                                 <state key="normal" title="Undo"/>
                                                 <connections>
                                                     <action selector="undoButtonDidTapped:" destination="Vf8-XI-Xs4" eventType="touchUpInside" id="2ZV-5w-RIa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3w-NV-Xln">
-                                                <rect key="frame" x="79" y="0.0" width="78.5" height="30"/>
+                                                <rect key="frame" x="52.5" y="0.0" width="52" height="30"/>
                                                 <state key="normal" title="+"/>
                                                 <connections>
                                                     <action selector="mathOperatorDidTapped:" destination="Vf8-XI-Xs4" eventType="touchUpInside" id="zHi-Ah-mRq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HB9-gK-PvI">
-                                                <rect key="frame" x="157.5" y="0.0" width="79" height="30"/>
+                                                <rect key="frame" x="104.5" y="0.0" width="52.5" height="30"/>
                                                 <state key="normal" title="-"/>
                                                 <connections>
                                                     <action selector="mathOperatorDidTapped:" destination="Vf8-XI-Xs4" eventType="touchUpInside" id="J9h-EH-QWa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee7-Ig-Bbm">
-                                                <rect key="frame" x="236.5" y="0.0" width="79" height="30"/>
+                                                <rect key="frame" x="157" y="0.0" width="52" height="30"/>
                                                 <state key="normal" title="*"/>
                                                 <connections>
                                                     <action selector="mathOperatorDidTapped:" destination="Vf8-XI-Xs4" eventType="touchUpInside" id="qhr-b1-NtT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERU-4J-88A">
-                                                <rect key="frame" x="315.5" y="0.0" width="79" height="30"/>
+                                                <rect key="frame" x="209" y="0.0" width="52.5" height="30"/>
                                                 <state key="normal" title="/"/>
                                                 <connections>
                                                     <action selector="mathOperatorDidTapped:" destination="Vf8-XI-Xs4" eventType="touchUpInside" id="8aa-Yf-adm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIh-Wx-Avs">
-                                                <rect key="frame" x="394.5" y="0.0" width="78.5" height="30"/>
+                                                <rect key="frame" x="261.5" y="0.0" width="52" height="30"/>
                                                 <state key="normal" title="="/>
                                                 <connections>
                                                     <action selector="equalButtonDidTapped:" destination="Vf8-XI-Xs4" eventType="touchUpInside" id="L2p-oM-nBF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf4-M5-uA5">
-                                                <rect key="frame" x="473" y="0.0" width="79" height="30"/>
+                                                <rect key="frame" x="313.5" y="0.0" width="52.5" height="30"/>
                                                 <state key="normal" title="Redo"/>
                                                 <connections>
                                                     <action selector="redoButtonDidTapped:" destination="Vf8-XI-Xs4" eventType="touchUpInside" id="Qb0-J9-Xxo"/>
@@ -105,7 +105,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pmU-NE-t8J">
-                                <rect key="frame" x="16" y="148.5" width="568" height="435.5"/>
+                                <rect key="frame" x="16" y="176.5" width="382" height="669.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IIt-N2-jjt">
                                     <size key="itemSize" width="84" height="68"/>
@@ -114,7 +114,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JFK-aH-Hw5">
+                                    <collectionViewCell opaque="NO" contentMode="center" id="JFK-aH-Hw5">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="68"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

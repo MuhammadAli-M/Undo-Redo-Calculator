@@ -19,4 +19,14 @@ extension CalculatorViewController:UITextFieldDelegate{
         let invalidCharacters = CharacterSet(charactersIn: "-.0123456789").inverted
         return string.rangeOfCharacter(from: invalidCharacters) == nil
     }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

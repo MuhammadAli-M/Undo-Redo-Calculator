@@ -44,6 +44,7 @@ class CalculatorViewController: UIViewController {
         setupCollectionView()
         updateUndoRedoButtonStates()
         updateEqualButtonState()
+        hideKeyboardWhenTappedAround()
     }
     
     @IBAction func mathOperatorDidTapped(_ sender: UIButton) {
