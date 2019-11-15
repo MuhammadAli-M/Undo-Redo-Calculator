@@ -1,6 +1,5 @@
 # Undo-Redo Calculator
-A simple calculator with the common four operators (+ ,- ,* ,/) but also with the ability to undo and redo the operations with a simple UI.
-
+A simple calculator with the common four operators (+ ,- ,* ,/) but also with the ability to undo and redo the operations with a simple UI. [unit testing is included]
 
 
 <img width="365" alt="Screenshot at Nov 15 00-16-16" src="https://user-images.githubusercontent.com/36597057/68900778-3877db80-073d-11ea-9b54-17be6f9f9fb1.png">
