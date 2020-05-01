@@ -6,7 +6,7 @@ A simple calculator with the common four operators (+ ,- ,* ,/) but also with th
 
 
 ## Application Requirements
-Application should contain
+Application should contain:
 - 7 buttons for (multiplication, division, addition, subtraction, equal, undo and redo).
   - undo and redo buttons to be enabled only when they could execute their functions.
   - Equal button to be active only when operation button ‘*, +, /, -‘ is selected and text field is not
