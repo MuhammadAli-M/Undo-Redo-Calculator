@@ -38,4 +38,3 @@ considering point 1&2 check the below sequence example
   - add 3 ‘+3’ result equals 8.
   - undo 4 times would make result equals 25 again
   
- 
